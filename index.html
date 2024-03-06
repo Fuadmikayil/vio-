@@ -1,0 +1,31 @@
+<!DOCTYPE html> 
+<html> 
+<body onclick="playPause()"> 
+
+<div style="text-align:center"> 
+  <br><br>
+  <video id="video1" width="100%" style="opacity: 0;">
+    <source src="qaa.mp4" type="video/mp4">
+  </video>
+</div> 
+
+<script> 
+ history.pushState(null, null, location.href);
+    window.onpopstate = function(event) {
+        history.go(1);
+    };
+var myVideo = document.getElementById("video1"); 
+
+function playPause() { 
+  if (myVideo.paused) {
+    myVideo.style.opacity=100
+    myVideo.play(); 
+    myVideo.requestFullscreen()
+  }
+} 
+
+</script> 
+
+</body> 
+</html>
+
