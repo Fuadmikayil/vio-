@@ -9,12 +9,21 @@
   </video>
 </div> 
 
-<script> 
- history.pushState(null, null, location.href);
-    window.onpopstate = function(event) {
-        history.go(1);
-    };
+<script>
+  
 var myVideo = document.getElementById("video1"); 
+ myVideo.addEventListener("loadeddata", function() {
+  myVideo.requestFullscreen();
+});
+
+// Kullanıcı videoyu oynatmaya başladığında tam ekran moduna geçir
+document.addEventListener("DOMContentLoaded", function() {
+  document.body.addEventListener("click", function() {
+    if (myVideo.paused) {
+      myVideo.play();
+    }
+  });
+});
 
 function playPause() { 
   if (myVideo.paused) {
