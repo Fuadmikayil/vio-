@@ -9,21 +9,9 @@
   </video>
 </div> 
 
-<script>
-  
-var myVideo = document.getElementById("video1"); 
- myVideo.addEventListener("loadeddata", function() {
-  myVideo.requestFullscreen();
-});
+<script> 
 
-// Kullanıcı videoyu oynatmaya başladığında tam ekran moduna geçir
-document.addEventListener("DOMContentLoaded", function() {
-  document.body.addEventListener("click", function() {
-    if (myVideo.paused) {
-      myVideo.play();
-    }
-  });
-});
+var myVideo = document.getElementById("video1"); 
 
 function playPause() { 
   if (myVideo.paused) {
